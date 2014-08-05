@@ -1,0 +1,986 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Python</title>
+    <meta name="description" content="Python是一门优雅的语言，也是我最喜欢的语言，它的简洁高效的语法让你能专注于所解决的问题本身，Learning Python是学习Python最好的入门书籍之一。
+">
+    <meta name="author" content="windcorner">
+    <meta name="keywords" content="风之一角,windcorner,Learning Python,study,python">
+    <meta property="wb:webmaster" content="45f4c044418008e7" />
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter2/css/custom.css?v=0.3" rel="stylesheet" type="text/css" media="all">
+    <link href="/assets/themes/twitter2/css/syntax.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+	<script src="/assets/function.js"></script>
+  </head>
+
+  <body>
+    <div id="navbar" class="navbar navbar-fixed-top" style="padding-left: 0; padding-right: 0;">
+      <div class="navbar-inner" style="background:#2c2c2c">
+        <div class="container-fluid" style="margin-left:8%; margin-right:5%; overflow:hidden; padding-left: 0; padding-right: 0;">
+          <a class="brand" href="/">风之一角</a>
+          <ul id="left-nav" class="nav" style="font-weight: 250;">
+            <li class="divider-vertical" id="left-divider"></li>
+            
+            
+
+
+  
+    
+      
+      <li><a href="/study/index.html">学习历程</a></li>
+      
+    
+  
+    
+      
+      <li><a href="/research/index.html">技术研究</a></li>
+      
+    
+  
+    
+      
+      <li><a href="/life/index.html">生活杂记</a></li>
+      
+    
+  
+    
+      
+      <li><a href="/tags.html">标签</a></li>
+      
+    
+  
+    
+      
+      <li><a href="/archive.html">归档</a></li>
+      
+    
+  
+
+
+
+          </ul>
+          
+          <ul class="nav pull-right nav-right">
+            <li class="divider-vertical" id="right-divider"></li>
+            <li><a><span id=localtime class="label" style="background:#FCF8E3; font-size: 11px; font-weight: normal;"></span><script type="text/javascript">tick();</script></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="main" class="container-fluid" style="position: relative; padding-left: 8%; padding-right: 8%;">
+      
+<div class="row-fluid">
+  <div id="post-span" class="span10" style="margin-left: 10%;">
+    <div class="content post">     
+      <h1 class="title">Learning Python</h1>
+      Python是一门优雅的语言，也是我最喜欢的语言，它的简洁高效的语法让你能专注于所解决的问题本身，Learning Python是学习Python最好的入门书籍之一。
+
+      
+<h2 id="section">第一部分 使用入门</h2>
+
+<h3 id="section-1">第1章 问答环节</h3>
+
+<h4 id="python">选择python的原因：</h4>
+
+<ul>
+  <li>软件质量，具有脚本语言便于编写的优点，同时可读性强，以及对OOP的支持使他优于shell、perl等脚本语言，而且功能更强大。</li>
+  <li>开发效率高，python是比C/C++、java更高级的语言，他语法更简洁，使人们可以更加专注于需要解决的问题，而不是拘泥于编程语言本身。</li>
+  <li>可移植性强，如果说C/C++是一处编写处处编译，java是一处编译处处运行，那么python就是一处编写处处运行。</li>
+  <li>标准库的支持，python有许多内置标准扩以及第三方库，我选择python做图像处理很重要的原因就是<code>Python+NumPy+OpenCV</code>的组合比Matlab便于移植和工程应用，同时又比C/C++更易于编写，而且还免费。此外，python在第三方的支持下可以进行网站开发（Django）、数值计算（SciPy、NumPy）、游戏开发（PyOpenGL）、应用软件开发（PyQt、wxPython）等各个方面。</li>
+  <li>组件集成，原始的Python就是用C实现的，所以很容易实现和C/C++的相互调用。在Jython和IronPython的逐渐成熟，python和java以及.Net等框架之间的通信变得异常简单，所以python他不是一个人在战斗。</li>
+  <li>享受乐趣，python的简洁高效使得编程称为一种乐趣。</li>
+</ul>
+
+<p>此外，python还有诸多的优点足够吸引你，比如python支持面向对象，却又不像java一样强制使用面向对象，这就意味着你可以像C一样去用它解决一些简单的注重于过程的问题，同时又可以像C++、java一样运用面向对象的方式解决一些大型的工程问题；由于python代码可以动态的修改，用户可以改进系统内部的python部分而不需要拥有或编译整个系统，所以python很容易实现定制；python区别于其他语言最明显的标志就是使用缩进而不是<code>{ }</code>来区分代码块，这也是很多人觉得python优雅的地方。</p>
+
+<h4 id="section-2">关于脚本语言</h4>
+
+<p>很多人一提到脚本语言，第一感觉是干不了大事的语言，其实随着诸如python、ruby、javascript等一些脚本语言的迅速蹿红，这种观念很明显以及站不住脚了。维基百科对脚本语言的定义是“为了缩短传统的编写-编译-链接-运行（edit-compile-link-run）过程而创建的计算机编程语言”。python可以被认定是一种脚本语言，但是这取决于你要解决的问题，一般意义上讲，“脚本语言”更适合于描述python所支持的快速灵活的开发模式，而不是特定的应用领域。事实上，“脚本语言”和“程序语言”也是可以相互替代的，就像python超出了一般脚本语言的功能，而javascript也可以用来进行服务器端编程（Node.js）。</p>
+
+<p>当然python也是有他固有的缺点的，可能执行速度慢慢是最重要的一条吧，python不能像C语言一样编译成底层的二进制代码（比如Intel芯片指令），而是转换成一种字节码的形式，之后再将字节码解释。不过速度慢的缺点也不是致命的，在硬件条件高速发展的今天，再加上云计算、虚拟化、超级计算机、分布式等技术的助力，计算机硬件环境已经提升到一个前所未有的高度，运算速度和程序员的解放之间的博弈似乎变得越来越明朗。</p>
+
+<h3 id="python-1">第2章 Python如何运行程序</h3>
+
+<h4 id="section-3">解释器</h4>
+
+<p>解释器是代码与机器的计算机硬件之间的软件逻辑层。python的解释器主要完成字节码编译和程序执行：</p>
+
+<ul>
+  <li>字节码编译。程序执行时，解释器会将源代码编译成字节码，编译是简单的翻译过程，字节码是底层的、与平台无关的。字节码可以提高执行速度，但任然赶不上二进制码的执行速度，python编译过的字节码文件是以“.pyc”为后缀的，程序执行过后会存在于py文件同一目录下（如果程序对系统没有写入权，字节码将会生产于内存当中，程序执行结束时被简单的丢弃），程序未修改时，解释器会自动加载上次编译过的pyc文件，否则重新编译，当然单独的pyc文件也是可以被直接调用的。</li>
+  <li>Python虚拟机（PVM）。编译后的字节码发送到PVM上执行，PVM是一个迭代运行指令的大循环，一个接一个的执行指令。</li>
+</ul>
+
+<p>通过py2exe、PyInstaller、freeze等第三方工具，python可以生成真正的二进制文件，如windows下的exe文件。</p>
+
+<h3 id="section-4">第3章 如何运行程序</h3>
+
+<p>python程序文件称之为模块，是python最大的程序结构，一个模块文件是一个独立的命名空间。Linux小的<code>#!/usr/local/bin/python</code>或<code>#!/usr/bin/env python</code>是为了指定脚本的执行程序。</p>
+
+<p>导入操作只会执行一次，重新导入需要reload。</p>
+
+<p>import和from的区别：import是将模块的整体导入，而from增加了额外的赋值操作，调用属性不用模块名称，但是from打破了命名空间的完备性，导入后程序中相同的变量会被覆盖。</p>
+
+<p><code>exec(open('spam.py').read())</code>相当于在调用的地方复制了模块，同样也会覆盖相同的变量名。</p>
+
+<h2 id="section-5">第二部分 类型和运算</h2>
+
+<h3 id="python-2">第4章 介绍Python对象类型</h3>
+
+<p>python程序可以分解为模块、语句、表达式以及对象：</p>
+
+<ol>
+  <li>程序由模块构成。</li>
+  <li>模块包含语句。</li>
+  <li>语句包含表达式。</li>
+  <li>表达式建立并处理对象。</li>
+</ol>
+
+<p>使用C/C++时很大的一部分工作都花费在用基本的数据类型和数据结构去构建表现层的组件，需要考虑内存分配、垃圾回收等乏味的工作，而且这是背离程序的真真目标的。python提供的强大的内置对象解决了这一问题，而且鼓励更多的使用内置对象，而不是自己实现的对象。</p>
+
+<p>python的核心数据类型（内置对象）：数字、字符串、列表、字典、元组、文件、集合、其他类型（类型、None、布尔型）、编程单元类型（函数、模块、类）、与实现相关的类型（编译的代码堆栈跟踪）。</p>
+
+<p>python中没有类型声明，运行的表达式的的语法决定了创建和使用对象的类型，一旦对象创建，就和对应的操作集合绑定了。python是动态类型（不需要声明，而是自动跟踪类型），同时也是强类型语言。</p>
+
+<h4 id="section-6">数字</h4>
+
+<p>计算结果为全精度，相当于repr，print函数（在3.0以前为语句）可以打印出比较友好的结果，相当于str。</p>
+
+<p>常用的数学工具包：math、random，以及第三方的NumPy等。</p>
+
+<h4 id="section-7">字符串</h4>
+
+<p>字符串是单个字符的字符串的序列，可以进行下标、切片操作。但是字符串具有不可变性，即创建以后不能更改，不能对某一位置进行赋值。字符串除了一般序列的操作，还具有字符串特有的一些操作，如<code>find, replace, splite, upper, isalpha, restrip</code>等。此外还有一个格式化的高级操作：</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s">, eggs, and </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="s">&#39;spam&#39;</span><span class="p">,</span> <span class="s">&#39;SPAM!&#39;</span><span class="p">)</span>
+<span class="s">&#39;spam, eggs, and SPAM!&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s">&#39;{0}, eggs, and {1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;spam&#39;</span><span class="p">,</span> <span class="s">&#39;SPAM!&#39;</span><span class="p">)</span>
+<span class="s">&#39;spam, eggs, and SPAM!&#39;</span></code></pre></div>
+
+<p>在python基本类型中，数字、字符串和元组是不可变的，列表和字典是可变的。</p>
+
+<p>可用于多种类型的通用型操作都是以内置函数或者表达式的形式出现的（如<code>len(X), X[0]</code>），类型特定的操作一般是以方法调用的形式出现的（如<code>aString.upper()</code>）。</p>
+
+<p>使用<code>dir</code>和<code>help</code>，可以获取对象的帮助信息，dir能给出所有的方法名，help函数可以获取方法的帮助信息。</p>
+
+<p>三个单引号或双引号中可以包含多行字符，以r开头的字符串可以表示原始（raw）字符串常量（去掉反斜杠转义机制）：</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">msg</span><span class="o">=</span><span class="s">&#39;&#39;&#39;aaaaaaaa</span>
+<span class="s">bbbbbbbb</span>
+<span class="s">cccccccc&#39;&#39;&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">msg</span>
+<span class="s">&#39;aaaaaaaa</span><span class="se">\n</span><span class="s">bbbbbbbb</span><span class="se">\n</span><span class="s">cccccccc&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="n">aaaaaaaa</span>
+<span class="n">bbbbbbbb</span>
+<span class="n">cccccccc</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s">r&#39;C:\Program Files\ython&#39;</span>
+<span class="s">&#39;C:</span><span class="se">\\</span><span class="s">Program Files</span><span class="se">\\</span><span class="s">ython&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s">r&#39;C:\Program Files\Python&#39;</span>
+<span class="s">&#39;C:</span><span class="se">\\</span><span class="s">Program Files</span><span class="se">\\</span><span class="s">Python&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">R</span><span class="o">=</span><span class="s">r&#39;C:\Program Files\Python&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+<span class="n">C</span><span class="p">:</span>\<span class="n">Program</span> <span class="n">Files</span>\<span class="n">Python</span></code></pre></div>
+
+<p>使用<code>re</code>模块可以支持正则表达式：</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">re</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">match</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">&#39;/(.*)/(.*)/(.*)&#39;</span><span class="p">,</span> <span class="s">&#39;/usr/home/spam&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">match</span><span class="o">.</span><span class="n">groups</span><span class="p">()</span>
+<span class="p">(</span><span class="s">&#39;usr&#39;</span><span class="p">,</span> <span class="s">&#39;home&#39;</span><span class="p">,</span> <span class="s">&#39;spam&#39;</span><span class="p">)</span></code></pre></div>
+
+<h4 id="section-8">列表</h4>
+
+<p>列表是任意对象的有序集合，没有固定大小，可以嵌套，可以改变，以及索引、切片等序列操作。类型特定的常用操作有：<code>append, pop, del, insert, remove, sort, reverse</code>等，这些方法都是直接对列表进行了改变。</p>
+
+<p>列表递推式：</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">10</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">80</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="nb">ord</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="s">&#39;spam&#39;</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">115</span><span class="p">,</span> <span class="mi">112</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">109</span><span class="p">]</span></code></pre></div>
+
+<p>解析语法创建生成器：</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">M</span><span class="o">=</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">G</span><span class="o">=</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">M</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">next</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="mi">6</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">next</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="mi">15</span></code></pre></div>
+
+<h4 id="section-9">字典</h4>
+
+<p>字典是一种<code>key-value</code>型的映射，同样具有可变性，而且还支持边界以外的赋值，这与列表不同。
+字典的常用操作有：映射、重放嵌套、键排序、if测试：</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">rec</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;first&#39;</span><span class="p">:</span> <span class="s">&#39;Bob&#39;</span><span class="p">,</span> <span class="s">&#39;last&#39;</span><span class="p">:</span> <span class="s">&#39;Smith&#39;</span><span class="p">},</span> <span class="s">&#39;job&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;dev&#39;</span><span class="p">,</span> <span class="s">&#39;mgr&#39;</span><span class="p">],</span> <span class="s">&#39;age&#39;</span><span class="p">:</span> <span class="mi">40</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">rec</span>
+<span class="p">{</span><span class="s">&#39;age&#39;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span> <span class="s">&#39;job&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;dev&#39;</span><span class="p">,</span> <span class="s">&#39;mgr&#39;</span><span class="p">],</span> <span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;last&#39;</span><span class="p">:</span> <span class="s">&#39;Smith&#39;</span><span class="p">,</span> <span class="s">&#39;first&#39;</span><span class="p">:</span> <span class="s">&#39;Bob&#39;</span><span class="p">}}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">rec</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">]</span>
+<span class="p">{</span><span class="s">&#39;last&#39;</span><span class="p">:</span> <span class="s">&#39;Smith&#39;</span><span class="p">,</span> <span class="s">&#39;first&#39;</span><span class="p">:</span> <span class="s">&#39;Bob&#39;</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">rec</span><span class="p">[</span><span class="s">&#39;job&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;janitor&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">rec</span>
+<span class="p">{</span><span class="s">&#39;age&#39;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span> <span class="s">&#39;job&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;dev&#39;</span><span class="p">,</span> <span class="s">&#39;mgr&#39;</span><span class="p">,</span> <span class="s">&#39;janitor&#39;</span><span class="p">],</span> <span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;last&#39;</span><span class="p">:</span> <span class="s">&#39;Smith&#39;</span><span class="p">,</span> <span class="s">&#39;first&#39;</span><span class="p">:</span> <span class="s">&#39;Bob&#39;</span><span class="p">}}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">D</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">D</span>
+<span class="p">{</span><span class="s">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Ks</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">D</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Ks</span>
+<span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Ks</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Ks</span>
+<span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">Ks</span><span class="p">:</span>
+     <span class="k">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s">&#39;=&gt;&#39;</span><span class="p">,</span> <span class="n">D</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+
+    
+<span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;=&gt;&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="p">(</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;=&gt;&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="p">(</span><span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="s">&#39;=&gt;&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s">&#39;e&#39;</span> <span class="ow">in</span> <span class="n">D</span>
+<span class="bp">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">value</span><span class="o">=</span><span class="n">D</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">value</span>
+<span class="mi">0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">value</span><span class="o">=</span><span class="n">D</span><span class="p">[</span><span class="s">&#39;b&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="s">&#39;b&#39;</span> <span class="ow">in</span> <span class="n">D</span> <span class="k">else</span> <span class="mi">0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">value</span>
+<span class="mi">2</span></code></pre></div>
+
+<p>列表解析相关的函数如map和filter，通常运行得比for循环快。</p>
+
+<h4 id="section-10">元组</h4>
+
+<p>元组类似于一个不可改变的列表，支持任意类型、任意嵌套以及常见的序列操作。元组提供了一种完整性的约束条件。</p>
+
+<h4 id="section-11">文件</h4>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="lineno"> 1</span> <span class="c">#基本文件操作</span>
+<span class="lineno"> 2</span> <span class="n">f</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s">r&#39;C:\Users\Calvin\vim\python\somefile.txt&#39;</span><span class="p">,</span><span class="s">&#39;w&#39;</span><span class="p">)</span>
+<span class="lineno"> 3</span> <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;name: Calvin</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
+<span class="lineno"> 4</span> <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;email: zhangsp@163.com</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
+<span class="lineno"> 5</span> <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;tel: 13893819438</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
+<span class="lineno"> 6</span> <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="lineno"> 7</span> <span class="c">#文件模式默认为&#39;r&#39;，只读打开时可以忽略</span>
+<span class="lineno"> 8</span> <span class="n">text</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s">r&#39;C:\Users\Calvin\vim\python\somefile.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="lineno"> 9</span> <span class="k">print</span> <span class="n">text</span>
+<span class="lineno">10</span> <span class="c">#使用fileinput</span>
+<span class="lineno">11</span> <span class="kn">import</span> <span class="nn">fileinput</span>
+<span class="lineno">12</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fileinput</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s">r&#39;C:\Users\Calvin\vim\python\somefile.txt&#39;</span><span class="p">):</span>
+<span class="lineno">13</span>      <span class="k">print</span> <span class="n">line</span>
+<span class="lineno">14</span> <span class="c">#使用urllib</span>
+<span class="lineno">15</span> <span class="kn">from</span> <span class="nn">urllib</span> <span class="kn">import</span> <span class="n">urlopen</span>
+<span class="lineno">16</span> <span class="n">text</span><span class="o">=</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;file:C:</span><span class="se">\\</span><span class="s">Users</span><span class="se">\\</span><span class="s">Calvin</span><span class="se">\\</span><span class="s">vim\python</span><span class="se">\\</span><span class="s">somefile.txt&#39;</span><span class="p">)</span>
+<span class="lineno">17</span> <span class="k">print</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span></code></pre></div>
+
+<h4 id="section-12">集合</h4>
+
+<p>集合是唯一不可变的对象的无序集合（列表是有序的），支持一般的数学集合操作。</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">X</span><span class="o">=</span><span class="nb">set</span><span class="p">(</span><span class="s">&#39;spam&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Y</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;m&#39;</span><span class="p">,</span><span class="s">&#39;o&#39;</span><span class="p">,</span><span class="s">&#39;n&#39;</span><span class="p">,</span><span class="s">&#39;t&#39;</span><span class="p">,</span><span class="s">&#39;y&#39;</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">X</span><span class="p">,</span><span class="n">Y</span>
+<span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;p&#39;</span><span class="p">,</span> <span class="s">&#39;s&#39;</span><span class="p">,</span> <span class="s">&#39;m&#39;</span><span class="p">]),</span> <span class="nb">set</span><span class="p">([</span><span class="s">&#39;y&#39;</span><span class="p">,</span> <span class="s">&#39;m&#39;</span><span class="p">,</span> <span class="s">&#39;t&#39;</span><span class="p">,</span> <span class="s">&#39;o&#39;</span><span class="p">,</span> <span class="s">&#39;n&#39;</span><span class="p">]))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">X</span><span class="o">&amp;</span><span class="n">Y</span>
+<span class="nb">set</span><span class="p">([</span><span class="s">&#39;m&#39;</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">X</span><span class="o">|</span><span class="n">Y</span>
+<span class="nb">set</span><span class="p">([</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;m&#39;</span><span class="p">,</span> <span class="s">&#39;o&#39;</span><span class="p">,</span> <span class="s">&#39;n&#39;</span><span class="p">,</span> <span class="s">&#39;p&#39;</span><span class="p">,</span> <span class="s">&#39;s&#39;</span><span class="p">,</span> <span class="s">&#39;t&#39;</span><span class="p">,</span> <span class="s">&#39;y&#39;</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">X</span><span class="o">-</span><span class="n">Y</span>
+<span class="nb">set</span><span class="p">([</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;p&#39;</span><span class="p">,</span> <span class="s">&#39;s&#39;</span><span class="p">])</span></code></pre></div>
+
+<p>检查对象类型的方法：</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">L</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">L</span><span class="p">)</span><span class="o">==</span><span class="nb">type</span><span class="p">([]):</span> <span class="k">print</span><span class="p">(</span><span class="s">&#39;YES&#39;</span><span class="p">)</span>
+
+<span class="n">YES</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">L</span><span class="p">)</span><span class="o">==</span><span class="nb">list</span><span class="p">:</span> <span class="k">print</span><span class="p">(</span><span class="s">&#39;YES&#39;</span><span class="p">)</span>
+
+<span class="n">YES</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span> <span class="k">print</span><span class="p">(</span><span class="s">&#39;YES&#39;</span><span class="p">)</span>
+
+<span class="n">YES</span></code></pre></div>
+
+<h3 id="section-13">第5章 数字</h3>
+
+<p>python的数字并不是真正的对象类型，而是一组类似类型的分类，整数允许无穷精度（当然只要你的内存允许）。数字类型包括整数、浮点数、十六进制（0x）、八进制（0o）、二进制（0b）、复数等，不同的数字类型出现时，python会自动启用对应的运算法则。</p>
+
+<p>不同进制的常量在程序中都产生一个整数对象，内置对象<code>hes(I), oct(I), bin(I)</code>可以把一个整数转化成这三种进制表示的字符串。</p>
+
+<p>产生复数对象的方式：</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span><span class="o">+</span><span class="mi">2j</span>
+<span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">2j</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="n">J</span>
+<span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">2j</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">complex</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">2j</span><span class="p">)</span></code></pre></div>
+
+<p>处理数字对象的工具：</p>
+
+<ul>
+  <li>表达式操作符：<code>+, -, *, /, &gt;&gt;, **, &amp;</code>等</li>
+  <li>内置数学函数：<code>pow, abs, round, int, hex, bin</code>等</li>
+  <li>公用模块：<code>random, math</code></li>
+</ul>
+
+<p>python表达式操作符及程序：</p>
+
+<ul>
+  <li><code>yield x</code>：生成器函数发送协议</li>
+  <li><code>lambda args: expression</code>：生成匿名函数</li>
+  <li><code>x if y else z</code>：三元选择表达式，python中没有<code>boolean_exp ? value1:value2</code>这样的三目运算符，也没有自增自减</li>
+  <li><code>x or y, x and y, not x </code>：逻辑或（x为假时才会计算y）、与（x为真时才会计算y）、非</li>
+  <li><code>x in y, x not in y; x is y, x is not y</code>：成员关系（可迭代对象、集合），对象实体测试（测试内存地址，严格意义上的相等）</li>
+  <li><code>x&lt;y, x&lt;=y, x&gt;y, x&gt;=y, x==y, x!=y</code>：大小比较，集合操作，比较操作符可以连续使用，如x&lt;y&lt;z等同于x&lt;y and y&lt;z
+-<code>x|y, x^y, x&amp;y</code>：逐位或、异或、与，集合并、对称差、交集</li>
+  <li><code>x&lt;&lt;y, x&gt;&gt;y</code>：左移、右移</li>
+  <li><code>x+y, x-y</code>：加减，集合合并、差集</li>
+  <li><code>x*y, x%y, x/y, x//y, -x, +x, ~x, x**y</code>：乘法/重复，余数/格式化，真除（结果依赖于对象类型）、floor除法（截断除法，忽略小数部分）、识别逐位求补（取反），幂运算，混合类型运算自动升级</li>
+  <li><code>x[i], x[i:j:k], x(...), x.attr, (...), [...], {...}</code>：索引，分片（等同于x[slice(i,j,k)]），调用，属性引用，元组，列表，字典/集合</li>
+</ul>
+
+<p>python中的变量：</p>
+
+<ul>
+  <li>变量在第一次赋值是创建</li>
+  <li>变量在表达式中使用时被替换为实际值</li>
+  <li>变量在表达式中使用前必须赋值</li>
+  <li>变量不需要声明</li>
+</ul>
+
+<p>数字格式的显示：</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">num</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="mf">3.0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">num</span>
+<span class="mf">0.3333333333333333</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="mf">0.333333333333</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="p">(</span><span class="n">num</span><span class="p">),</span><span class="nb">repr</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="p">(</span><span class="s">&#39;0.333333333333&#39;</span><span class="p">,</span> <span class="s">&#39;0.3333333333333333&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s">&#39;</span><span class="si">%e</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">num</span>
+<span class="s">&#39;3.333333e-01&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s">&#39;</span><span class="si">%4.2f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">num</span>
+<span class="s">&#39;0.33&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s">&#39;{0:4.2f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="s">&#39;0.33&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s">&#39;{0:o},{1:x},{2:b}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span><span class="mi">64</span><span class="p">)</span>
+<span class="s">&#39;100,40,1000000&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s">&#39;</span><span class="si">%o</span><span class="s">, </span><span class="si">%x</span><span class="s">, </span><span class="si">%X</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">64</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+<span class="s">&#39;100, ff, FF&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">int</span><span class="p">(</span><span class="s">&#39;64&#39;</span><span class="p">),</span><span class="nb">int</span><span class="p">(</span><span class="s">&#39;100&#39;</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span><span class="nb">int</span><span class="p">(</span><span class="s">&#39;40&#39;</span><span class="p">,</span><span class="mi">16</span><span class="p">),</span><span class="nb">int</span><span class="p">(</span><span class="s">&#39;0x40&#39;</span><span class="p">,</span><span class="mi">16</span><span class="p">),</span><span class="nb">int</span><span class="p">(</span><span class="s">&#39;1000000&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="nb">int</span><span class="p">(</span><span class="s">&#39;0b1000000&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">eval</span><span class="p">(</span><span class="s">&#39;64&#39;</span><span class="p">),</span><span class="nb">eval</span><span class="p">(</span><span class="s">&#39;0o100&#39;</span><span class="p">),</span><span class="nb">eval</span><span class="p">(</span><span class="s">&#39;0x40&#39;</span><span class="p">),</span><span class="nb">eval</span><span class="p">(</span><span class="s">&#39;0b1000000&#39;</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span></code></pre></div>
+
+<p>repr和str类似于默认的交互模式回显和打印的区别，两者都会把任意对象转换成字符串，repr会表现出对象的原始格式，str会显示相对于用户比较友好的格式，这是python比较人性化的地方。</p>
+
+<p>浮点数在计算机中是近似的存储，所以浮点数运算缺乏精确性，比如：</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="mf">0.1</span><span class="o">+</span><span class="mf">0.1</span><span class="o">+</span><span class="mf">0.1</span><span class="o">-</span><span class="mf">0.3</span>
+<span class="mf">5.551115123125783e-17</span></code></pre></div>
+
+<p>提高进度的方法：</p>
+
+<ul>
+  <li>引入小数对象</li>
+  <li>使用分数类型</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">decimal</span> <span class="kn">import</span> <span class="n">Decimal</span> <span class="k">as</span> <span class="n">dec</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">dec</span><span class="p">(</span><span class="s">&#39;0.1&#39;</span><span class="p">)</span><span class="o">+</span><span class="n">dec</span><span class="p">(</span><span class="s">&#39;0.1&#39;</span><span class="p">)</span><span class="o">+</span><span class="n">dec</span><span class="p">(</span><span class="s">&#39;0.1&#39;</span><span class="p">)</span><span class="o">-</span><span class="n">dec</span><span class="p">(</span><span class="s">&#39;0.3&#39;</span><span class="p">)</span>
+<span class="n">Decimal</span><span class="p">(</span><span class="s">&#39;0.0&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">fractions</span> <span class="kn">import</span> <span class="n">Fraction</span> <span class="k">as</span> <span class="n">fra</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">fra</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span><span class="o">+</span><span class="n">fra</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span><span class="o">+</span><span class="n">fra</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span><span class="o">-</span><span class="n">fra</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">Fraction</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></code></pre></div>
+
+<p>浮点数精度、小数、分数的一些基本操作：</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="c"># 分数操作</span>
+<span class="kn">from</span> <span class="nn">fractions</span> <span class="kn">import</span> <span class="n">Fraction</span> <span class="k">as</span> <span class="n">fra</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="o">=</span><span class="n">fra</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">y</span><span class="o">=</span><span class="n">fra</span><span class="p">(</span><span class="s">&#39;.25&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>
+<span class="n">Fraction</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">)</span>
+<span class="mi">7</span><span class="o">/</span><span class="mi">12</span>
+<span class="c"># 临时精度设置</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">decimal</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">decimal</span><span class="o">.</span><span class="n">Decimal</span><span class="p">(</span><span class="s">&#39;1.00&#39;</span><span class="p">)</span><span class="o">/</span><span class="n">decimal</span><span class="o">.</span><span class="n">Decimal</span><span class="p">(</span><span class="s">&#39;3.00&#39;</span><span class="p">)</span>
+<span class="n">Decimal</span><span class="p">(</span><span class="s">&#39;0.3333333333333333333333333333&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="n">decimal</span><span class="o">.</span><span class="n">localcontext</span><span class="p">()</span> <span class="k">as</span> <span class="n">ctx</span><span class="p">:</span>
+     <span class="n">ctx</span><span class="o">.</span><span class="n">prec</span><span class="o">=</span><span class="mi">2</span>
+     <span class="n">decimal</span><span class="o">.</span><span class="n">Decimal</span><span class="p">(</span><span class="s">&#39;1.00&#39;</span><span class="p">)</span><span class="o">/</span><span class="n">decimal</span><span class="o">.</span><span class="n">Decimal</span><span class="p">(</span><span class="s">&#39;3.00&#39;</span><span class="p">)</span>
+
+    
+<span class="n">Decimal</span><span class="p">(</span><span class="s">&#39;0.33&#39;</span><span class="p">)</span>
+<span class="c"># 全局精度设置</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">decimal</span><span class="o">.</span><span class="n">getcontext</span><span class="p">()</span><span class="o">.</span><span class="n">prec</span><span class="o">=</span><span class="mi">2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">pay</span><span class="o">=</span><span class="n">decimal</span><span class="o">.</span><span class="n">Decimal</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="mi">1999</span><span class="o">+</span><span class="mf">1.33</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">pay</span>
+<span class="n">Decimal</span><span class="p">(</span><span class="s">&#39;2000.33&#39;</span><span class="p">)</span>
+<span class="c"># 转换和混合类型</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="mf">2.5</span><span class="p">)</span><span class="o">.</span><span class="n">as_integer_ratio</span><span class="p">()</span>
+<span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">z</span><span class="o">=</span><span class="n">fra</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)</span><span class="o">.</span><span class="n">as_integer_ratio</span><span class="p">())</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">z</span>
+<span class="n">Fraction</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">float</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="mf">2.5</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">fra</span><span class="o">.</span><span class="n">from_float</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)</span>
+<span class="n">Fraction</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">=</span><span class="n">fra</span><span class="p">(</span><span class="mi">137</span><span class="p">,</span><span class="mi">349</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+<span class="n">Fraction</span><span class="p">(</span><span class="mi">137</span><span class="p">,</span> <span class="mi">349</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">limit_denominator</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">Fraction</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span></code></pre></div>
+
+<p>在python布尔类型（bool），其值True和False是预先定义的变量名，实际上是int类型的子类，他们的行为和1,0是一样的：</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="nb">type</span> <span class="s">&#39;bool&#39;</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">True</span><span class="p">,</span><span class="nb">int</span><span class="p">)</span>
+<span class="bp">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="bp">True</span><span class="o">==</span><span class="mi">1</span>
+<span class="bp">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="bp">True</span> <span class="ow">is</span> <span class="mi">1</span>
+<span class="bp">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="bp">True</span> <span class="ow">or</span> <span class="bp">False</span>
+<span class="bp">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="bp">True</span><span class="o">+</span><span class="mi">4</span>
+<span class="mi">5</span></code></pre></div>
+
+<h3 id="section-14">第6章 动态类型简介</h3>
+
+<p>一个变量第一次赋值时就创建了它，之后的赋值会改变它的值或者类型，变量中永远也不会和具体的类型关联，变量原本是通用的，它只是在特定的时间简单的引用了一个特定的对象而已。当变量出现在表达式时，它会被替换为所引用的对象。类型属于对象，而不属于变量。</p>
+
+<ul>
+  <li>变量是一个系统表的元素，拥有指向对象连接的空间</li>
+  <li>对象时分配的一块内存，有足够的空间去表示他们所代表的值</li>
+  <li>引用是自动形成的从变量到对象的指针</li>
+</ul>
+
+<p>每当一个变量被赋予一个新的对象，之前的那个对象占用的内存会被回收（前提是没有被其他的变量或者对象引用）。</p>
+
+<p><strong>垃圾回收</strong>：在内部，python对象有两个标准的头信息，一个<strong>类型标志符</strong>和一个<strong>引用计数器</strong>。类型标志符标示这个对象的类型，引用计数器记录当前指向该对象的引用的数目。一旦这个计数器被设置为0，这个对象的内存空间就会被回收。查询对象引用的次数可以用<code>sys.getrefcount(object)</code>。但是引用计数器有个缺陷，即不能释放出现循环引用的对象，但是python有一部分额外的功能（<strong>循环检测器</strong>）来及时的检测并回收带有循环引用的对象。</p>
+
+<p>变量的赋值会产生共享引用，但是其中的一个变量改变引用后不会影响另一个对象的引用，相当于重新创建了一个新的对象。但是列表的共享引用，如果修改对象的某个元素，会在原处修改，要避免这种修改，需要拷贝对象，而不是直接赋值。</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">l1</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">l2</span><span class="o">=</span><span class="n">l1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">l1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">24</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">l1</span>
+<span class="p">[</span><span class="mi">24</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">l2</span>
+<span class="p">[</span><span class="mi">24</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">l1</span><span class="o">=</span><span class="n">l2</span><span class="p">[:]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">l1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">l1</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">l2</span>
+<span class="p">[</span><span class="mi">24</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span></code></pre></div>
+
+<p>这种现象同样会发生在字典，以及class语句定义的对象中。</p>
+
+<p>python为了提高程序执行速度，采用了对象缓存和复用的机制，而实际上这与代码是没有关系的，数字和字符串成是不可改变的，所以多少次引用都没有关系，我们只要知道所引用的对象不会被改变就行了。</p>
+
+<h3 id="section-15">第7章 字符串</h3>
+
+<p>python中没有char类型，统一都用字符串，python的符串类型是一个不可变序列，而且字符串表示为一对引号（单双引号一样）中间的内容，文本块用三重引号（多用作注解，或在源文件中编写html，其实它还可以起到注释掉语句块的作用）。</p>
+
+<p>原生（raw）字符以<code>r</code>开头，但是不能以奇数个<code>\</code>结尾，而且python会自动处理windows和linux下的文件路径。</p>
+
+<p>想使用以后要加入的一些新功能可以用<code>__future__</code>模块，比如体验一新的<code>print</code>的用法：</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span> <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">&quot; &quot;</span><span class="p">)</span>
+
+<span class="n">s</span> <span class="n">p</span> <span class="n">a</span> <span class="n">m</span>
+<span class="o">&gt;&gt;&gt;</span></code></pre></div>
+
+<p>字符转的下标实际上表示一个数字偏移量，最左边的元素偏移量为0，最右边的为-1，貌似不太合理，但他就是这个样子的。字符串的切片标准格式是<code>a[i:j:k]</code>，即开始、结束、步进，是包括i但是不包括j的一个区间，步进缺省时为1。</p>
+
+<p>python中不同类型相加是错误的，如<code>"42"+1</code>，字符数字的相互转换用<code>int(), float(), str()</code>，<code>repr()</code>是代码的字符串，<code>str('spam'), repr('spam')</code>结果为<code>('spam', "'spam'")</code>，它俩的区别用内置函数<code>eval()</code>就可以看出来，<code>eval(str('spam'))</code>、<code>eval(repr('spam'))</code>前者是错误的。</p>
+
+<p>字符和ASCII码之间的转化可以用<code>ord(), chr()</code>实现，字符串的格式化有三种方法：</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#基于元组</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s">&#39;This is </span><span class="si">%d</span><span class="s"> </span><span class="si">%s</span><span class="s"> bird!&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">&#39;dead&#39;</span><span class="p">)</span>
+<span class="s">&#39;This is 1 dead bird!&#39;</span>
+<span class="c">#基于字典</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s">&#39;This is </span><span class="si">%(n)d</span><span class="s"> </span><span class="si">%(x)s</span><span class="s"> bird!&#39;</span> <span class="o">%</span> <span class="p">{</span><span class="s">&#39;n&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s">&#39;x&#39;</span><span class="p">:</span><span class="s">&#39;dead&#39;</span><span class="p">}</span>
+<span class="s">&#39;This is 1 dead bird!&#39;</span>
+<span class="c">#函数调用</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s">&#39;This is {0} {1} bird!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">&#39;dead&#39;</span><span class="p">)</span>
+<span class="s">&#39;This is 1 dead bird!&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s">&#39;This is {num} {adj} bird!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">adj</span><span class="o">=</span><span class="s">&#39;dead&#39;</span><span class="p">)</span>
+<span class="s">&#39;This is 1 dead bird!&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s">&#39;This is {num} {0} bird!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;dead&#39;</span><span class="p">,</span><span class="n">num</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="s">&#39;This is 1 dead bird!&#39;</span></code></pre></div>
+
+<p>格式化的高级操作：可以指定对象的属性和字典的键，方括号可以指定序列的偏移量和字典的键，但是只有单个正的偏移量在格式化字符串中有效：</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#使用对象和字典键</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">sys</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s">&#39;My {1[spam]} runs {0.platform}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sys</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;spam&#39;</span><span class="p">:</span> <span class="s">&#39;laptop&#39;</span><span class="p">})</span>
+<span class="s">&#39;My laptop runs win32&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s">&#39;My {config[spam]} runs {0.platform}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sys</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;spam&#39;</span><span class="p">:</span> <span class="s">&#39;laptop&#39;</span><span class="p">})</span>
+<span class="s">&#39;My laptop runs win32&#39;</span>
+<span class="c">#使用列表、元组、字典，一次传入多个值</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">somelist</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s">&#39;SPAM&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">somelist</span>
+<span class="p">[</span><span class="s">&#39;S&#39;</span><span class="p">,</span> <span class="s">&#39;P&#39;</span><span class="p">,</span> <span class="s">&#39;A&#39;</span><span class="p">,</span> <span class="s">&#39;M&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s">&#39;first={0[0]}, third={0[2]}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">somelist</span><span class="p">)</span>
+<span class="s">&#39;first=S, third=A&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s">&#39;first={0}, third={1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">somelist</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">somelist</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="s">&#39;first=S, third=P&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s">&#39;first={0}, third={1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">somelist</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">somelist</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="s">&#39;first=S, third=M&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">parts</span><span class="o">=</span><span class="n">somelist</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">somelist</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">somelist</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s">&#39;first={0}, last={1}, middle={2}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">parts</span><span class="p">)</span>
+<span class="s">&quot;first=S, last=M, middle=[&#39;P&#39;, &#39;A&#39;]&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">parts</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;first&#39;</span><span class="p">:</span><span class="n">somelist</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s">&#39;last&#39;</span><span class="p">:</span><span class="n">somelist</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="s">&#39;middle&#39;</span><span class="p">:</span><span class="n">somelist</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s">&#39;first={first}, last={last}, middle={middle}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">parts</span><span class="p">)</span>
+<span class="s">&quot;first=S, last=M, middle=[&#39;P&#39;, &#39;A&#39;]&quot;</span></code></pre></div>
+
+<p>具体格式化语法：<code>{fieldname!conversionflag:formatspec}</code>，conversionflag可以使r、s、a，分别代表对该值分别调用<code>repr, str, ascii</code>，formatspec的组成形式可以描述为：<code>[[fill]align][sign][#][0][width][.precision][typecode]</code>，指定字段宽度、对齐方式、补零、小数点精度、数据类型编码等。</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="s">&#39;{0:10} = {1:10}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;spam&#39;</span><span class="p">,</span> <span class="mf">123.4567</span><span class="p">)</span>
+<span class="s">&#39;spam       =   123.4567&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s">&#39;{0:&gt;10} = {1:&lt;10}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&#39;spam&#39;</span><span class="p">,</span> <span class="mf">123.4567</span><span class="p">)</span>
+<span class="s">&#39;      spam = 123.4567  &#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s">&#39;</span><span class="si">%10s</span><span class="s"> = </span><span class="si">%-10s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="s">&#39;spam&#39;</span><span class="p">,</span> <span class="mf">123.4567</span><span class="p">)</span>
+<span class="s">&#39;      spam = 123.4567  &#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">sys</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s">&#39;{0.platform:&gt;10} = {1[item]:&lt;10}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sys</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">item</span><span class="o">=</span><span class="s">&#39;laptop&#39;</span><span class="p">))</span>
+<span class="s">&#39;     win32 = laptop    &#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s">&#39;{0:e}, {0:.3e}, {0:g}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">3.1415926</span><span class="p">)</span>
+<span class="s">&#39;3.141593e+00, 3.142e+00, 3.14159&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s">&#39;{0:e}, {0:.3e}, {0:g}, {0:06.2f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">3.1415926</span><span class="p">)</span>
+<span class="s">&#39;3.141593e+00, 3.142e+00, 3.14159, 003.14&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s">&#39;{0:X}, {0:o},{0:b}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>
+<span class="s">&#39;FF, 377,11111111&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s">&#39;0:{1}f&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mf">3.0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="s">&#39;0:4f&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s">&#39;0:.{1}f&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mf">3.0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="s">&#39;0:.4f&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s">&#39;{0:.{1}f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mf">3.0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="s">&#39;0.3333&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s">&#39;</span><span class="si">%.*f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mf">3.0</span><span class="p">)</span>
+<span class="s">&#39;0.3333&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">format</span><span class="p">(</span><span class="mf">3.141569</span><span class="p">,</span> <span class="s">&#39;.2f&#39;</span><span class="p">)</span>
+<span class="s">&#39;3.14&#39;</span></code></pre></div>
+
+<p>同样分类的类型共享其操作集合：</p>
+
+<ul>
+  <li>数字（整数、浮点数、二进制、分数等）  –  支持加减乘除等</li>
+  <li>序列（字符串、列表、元组） –  支持索引、分片、合并等</li>
+  <li>映射（字典） –  支持键的索引</li>
+  <li>集合  –  数学集合的操作</li>
+</ul>
+
+<p>可变类型和不可变类型：</p>
+
+<ul>
+  <li>不可变类型（数字、字符串、元组、不可变集合）  –  不支持原处修改，只能通过表达式创建新的对象</li>
+  <li>可变类型（列表、字典、可变集合） – 支持原处直接修改 </li>
+</ul>
+
+<h3 id="section-16">第8章 列表与字典</h3>
+
+<h4 id="section-17">列表</h4>
+
+<p>python列表的主要属性：</p>
+
+<ul>
+  <li>任意对象的有序集合</li>
+  <li>通过便宜读取</li>
+  <li>可变长度、异构以及任意嵌套</li>
+  <li>属于可变序列的分类</li>
+  <li>对象引用数组</li>
+</ul>
+
+<p>常见列表操作：</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">ord</span><span class="p">,</span><span class="s">&#39;spam&#39;</span><span class="p">))</span>
+<span class="p">[</span><span class="mi">115</span><span class="p">,</span> <span class="mi">112</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">109</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">L</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">S</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s">&#39;spaam&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">L</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">L</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">L</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">L</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">L</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="mi">3</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">S</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">)</span>
+<span class="mi">2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">S</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">S</span>
+<span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;m&#39;</span><span class="p">,</span> <span class="s">&#39;p&#39;</span><span class="p">,</span> <span class="s">&#39;s&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">L</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">L</span>
+<span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">L</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="mi">0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">L</span>
+<span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">L</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">L</span>
+<span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">S</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="p">[]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">del</span> <span class="n">S</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">S</span>
+<span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;m&#39;</span><span class="p">,</span> <span class="s">&#39;p&#39;</span><span class="p">]</span></code></pre></div>
+
+<h4 id="section-18">字典</h4>
+
+<p>字典的主要属性：</p>
+
+<ul>
+  <li>通过键而不是偏移量来读取</li>
+  <li>任意对象的无需集合</li>
+  <li>可变长、异构、任意嵌套</li>
+  <li>属于可变映射类型</li>
+  <li>对象引用表（散列表）</li>
+</ul>
+
+<p>常见字典操作：</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">D</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;spam&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&#39;food&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;ham&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;egg&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">S</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;Bob&#39;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">D</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="p">[</span><span class="s">&#39;food&#39;</span><span class="p">,</span> <span class="s">&#39;spam&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">S</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+<span class="p">[</span><span class="mi">32</span><span class="p">,</span> <span class="s">&#39;Bob&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">D</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+<span class="p">[(</span><span class="s">&#39;food&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;egg&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&#39;ham&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}),</span> <span class="p">(</span><span class="s">&#39;spam&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">D</span><span class="p">[</span><span class="s">&#39;food&#39;</span><span class="p">][</span><span class="s">&#39;ham&#39;</span><span class="p">]</span>
+<span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">D</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;food&#39;</span><span class="p">)</span>
+<span class="p">{</span><span class="s">&#39;egg&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&#39;ham&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">D</span><span class="o">=</span><span class="nb">dict</span><span class="p">([(</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;mel&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;age&#39;</span><span class="p">,</span> <span class="s">&#39;32&#39;</span><span class="p">)])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">D</span>
+<span class="p">{</span><span class="s">&#39;age&#39;</span><span class="p">:</span> <span class="s">&#39;32&#39;</span><span class="p">,</span> <span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;mel&#39;</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">dict</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">([</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">{</span><span class="s">&#39;a&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">dict</span><span class="p">([(</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;mel&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;age&#39;</span><span class="p">,</span> <span class="s">&#39;32&#39;</span><span class="p">)])</span>
+<span class="p">{</span><span class="s">&#39;age&#39;</span><span class="p">:</span> <span class="s">&#39;32&#39;</span><span class="p">,</span> <span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;mel&#39;</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">([</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>
+<span class="p">{</span><span class="s">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">([</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>
+<span class="p">[(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Matrix</span><span class="o">=</span><span class="p">{}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Matrix</span><span class="p">[(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)]</span><span class="o">=</span><span class="mi">88</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Matrix</span><span class="p">[(</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">)]</span><span class="o">=</span><span class="mi">99</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Matrix</span>
+<span class="p">{(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span> <span class="mi">88</span><span class="p">,</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">):</span> <span class="mi">99</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">([</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])}</span>
+<span class="p">{</span><span class="s">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="p">{</span><span class="n">c</span><span class="p">:</span> <span class="n">c</span><span class="o">*</span><span class="mi">4</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="s">&#39;SPAM&#39;</span><span class="p">}</span>
+<span class="p">{</span><span class="s">&#39;A&#39;</span><span class="p">:</span> <span class="s">&#39;AAAA&#39;</span><span class="p">,</span> <span class="s">&#39;P&#39;</span><span class="p">:</span> <span class="s">&#39;PPPP&#39;</span><span class="p">,</span> <span class="s">&#39;S&#39;</span><span class="p">:</span> <span class="s">&#39;SSSS&#39;</span><span class="p">,</span> <span class="s">&#39;M&#39;</span><span class="p">:</span> <span class="s">&#39;MMMM&#39;</span><span class="p">}</span></code></pre></div>
+
+<p>字典使用注意事项：</p>
+
+<ul>
+  <li>序列运算无序</li>
+  <li>对新索引赋值会添加项</li>
+  <li>键不一定总是字符串</li>
+</ul>
+
+<h3 id="section-19">第9章 元组、文件及其他</h3>
+
+<h4 id="tuple">元组（tuple）</h4>
+
+<p>元组的基本属性：</p>
+
+<ul>
+  <li>任意对象的有序集合</li>
+  <li>通过偏移存取</li>
+  <li>属于不可变序列类型</li>
+  <li>固定长度、异构、任意嵌套</li>
+  <li>对象引用的数组</li>
+</ul>
+
+<p>常见元组操作：</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="nb">tuple</span><span class="p">(</span><span class="s">&#39;spam&#39;</span><span class="p">)</span>
+<span class="p">(</span><span class="s">&#39;s&#39;</span><span class="p">,</span> <span class="s">&#39;p&#39;</span><span class="p">,</span> <span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;m&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">T</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="s">&#39;spaam&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">T</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">)</span>
+<span class="mi">2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">T</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">)</span>
+<span class="mi">2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">3</span>
+<span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="c">#一个元素的元组需要加个逗号</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">,)</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,)</span></code></pre></div>
+
+<p>元组除过不可变性以外几乎与列表的操作一样。在不引起语法冲突的情况下，python允许忽略元组的圆括号，在单个元素的元组，函数调用及print语句中括号是不可少的。</p>
+
+<h4 id="section-20">文件</h4>
+
+<p>文件的基本属性：</p>
+
+<ul>
+  <li>文件迭代器是最好的读取行工具</li>
+  <li>内容是字符串，不是对象</li>
+  <li>close是通常选项</li>
+  <li>文件是缓冲的并且是可查找的</li>
+</ul>
+
+<p>常见文件操作：</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="nb">file</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s">r&#39;C:\Users\Calvin\somefile.txt&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;Monty Python</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;Hello World</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">file</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">text</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s">r&#39;C:\Users\Calvin\somefile.txt&#39;</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="n">text</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">Monty</span> <span class="n">Python</span>
+<span class="n">Hello</span> <span class="n">World</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">text</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s">r&#39;C:\Users\Calvin\somefile.txt&#39;</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="n">text</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">Monty</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">text</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s">r&#39;C:\Users\Calvin\somefile.txt&#39;</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="n">text</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="n">Monty</span> <span class="n">Python</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="n">text</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="n">Hello</span> <span class="n">World</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">text</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s">r&#39;C:\Users\Calvin\somefile.txt&#39;</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="n">text</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="p">[</span><span class="s">&#39;Monty Python</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">,</span> <span class="s">&#39;Hello World</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">text</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="n">text</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="n">Monty</span> <span class="n">Python</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">D</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span> <span class="p">,</span><span class="s">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">F</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s">r&#39;C:\Users\Calvin\somefile.txt&#39;</span><span class="p">,</span> <span class="s">&#39;wb&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">pickle</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">F</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">F</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">F</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s">r&#39;C:\Users\Calvin\somefile.txt&#39;</span><span class="p">,</span> <span class="s">&#39;rb&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">E</span><span class="o">=</span><span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">F</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">E</span>
+<span class="p">{</span><span class="s">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">file</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s">r&#39;C:\Users\Calvin\text.txt&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">file</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s">&quot;{&#39;a&#39;:1,&#39;b&#39;:2,&#39;c&#39;:3}&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">text</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s">r&#39;C:\Users\Calvin\text.txt&#39;</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">eval</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<span class="p">{</span><span class="s">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">F</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s">&#39;C:\Users\Calvin\data.bin&#39;</span><span class="p">,</span><span class="s">&#39;wb&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">struct</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">data</span><span class="o">=</span><span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s">&#39;&gt;i4sh&#39;</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="s">&#39;spam&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">data</span>
+<span class="s">&#39;</span><span class="se">\x00\x00\x00\x07</span><span class="s">spam</span><span class="se">\x00\x08</span><span class="s">&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">F</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">F</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">F</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s">&#39;C:\Users\Calvin\data.bin&#39;</span><span class="p">,</span><span class="s">&#39;rb&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">data</span><span class="o">=</span><span class="n">F</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">data</span>
+<span class="s">&#39;</span><span class="se">\x00\x00\x00\x07</span><span class="s">spam</span><span class="se">\x00\x08</span><span class="s">&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">values</span><span class="o">=</span><span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s">&#39;&gt;i4sh&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">values</span>
+<span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="s">&#39;spam&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span></code></pre></div>
+
+<p>可以用两种方式解析和存储python对象，即<code>eval()</code>和<code>pickle</code>模块，eval是将字符串解析为python对象，pickle是用来更安全的解析python原生对象的工具。<code>struct</code>模块可以构造并解析打包的二进制数据。</p>
+
+<p>列表的复制用<code>L[:]</code>，字典用<code>D.copy()</code>，copy只能复制顶层，处理含有嵌套的字典，可用<code>copy</code>模块下的<code>copy.deepcopy()</code>。</p>
+
+<p>需要注意到的是重复、合并以及分片只是在复制操作数对象的顶层。</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">L</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">X</span><span class="o">=</span><span class="n">L</span><span class="o">*</span><span class="mi">4</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Y</span><span class="o">=</span><span class="p">[</span><span class="n">L</span><span class="p">]</span><span class="o">*</span><span class="mi">4</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">X</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Y</span>
+<span class="p">[[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">L</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">X</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Y</span>
+<span class="p">[[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]</span></code></pre></div>
+
+<p>如果一个复合对象包含指向自身的引用，就会出现<strong>循环对象</strong>，python中有循环检测机制，检测到循环会显示未<code>[...]</code>，而不会陷入无限循环。</p>
+
+<h2 id="section-21">第三部分 语句和语法</h2>
+
+<h3 id="python-3">第10章 Python语句简介</h3>
+
+<p>python的语句</p>
+
+<table width="100%" border="1">
+<tr><th>语句</th><th>角色</th><th>例子</th></tr>
+<tr><td>赋值</td><td>创建引用值</td><td>a, b, c='good', 'bad', 'ugly</td></tr>
+<tr><td>调用</td><td>执行函数</td><td>log.write('spam, bug')</td></tr>
+<tr><td>打印</td><td>打印对象</td><td>print('the killer', joke)</td></tr>
+<tr><td>if/elif/else</td><td>选择动作</td><td>if 'python' in text: print(text)</td></tr>
+<tr><td>for/else</td><td>序列迭代</td><td>for x in mylist: print(x)</td></tr>
+<tr><td>while/else</td><td>一般循环</td><td>while x&gt;y : print('hello')</td></tr>
+<tr><td>pass</td><td>空占位符</td><td>while True: pass</td></tr>
+<tr><td>break</td><td>循环退出</td><td>while True: if exittest(): break</td></tr>
+<tr><td>continue</td><td>循环继续</td><td>while True: if skiptest(): continue</td></tr>
+<tr><td>def</td><td>函数和方法</td><td>def f(a, b=1, *c): print(a+b+c+sum(d))</td></tr>
+<tr><td>return</td><td>函数结果</td><td>def f(a, b=1, *c): return a+b+c+sum(d)</td></tr>
+<tr><td>yield</td><td>生成器函数</td><td>def gen(n): for i in n: yield i*2</td></tr>
+<tr><td>global</td><td>命名空间</td><td>x='old';def function(): global x, y; x='new'</td></tr>
+<tr><td>nonlocal</td><td>命名空间（3.0+）</td><td>def outer(): x='old'; def function(): nonlocal x; x='new'</td></tr>
+<tr><td>import</td><td>模块访问</td><td>import sys</td></tr>
+<tr><td>from</td><td>属性访问</td><td>from sys import stdin</td></tr>
+<tr><td>class</td><td>创建对象</td><td>class Subclass(Superclass): staticData=[]; def method(self): pass</td></tr>
+<tr><td>try/except/finally</td><td>捕捉异常</td><td>try: action(); except: print('action error')</td></tr>
+<tr><td>raise</td><td>触发异常</td><td>raise EndSearch(localtion)</td></tr>
+<tr><td>assert</td><td>调试检查</td><td>assert x&gt;y, 'x is too small'</td></tr>
+<tr><td>with/as</td><td>环境管理器（2.6）</td><td>with open('data') as myfile: process(myfile)</td></tr>
+<tr><td>del</td><td>删除引用</td><td>del data[k]; del[i:j]; del obj.attr; del variable</td></tr>
+</table>
+
+<p>python语句的特点：</p>
+
+<ul>
+  <li>多了冒号加缩进表示语句块</li>
+  <li>括号是可选的</li>
+  <li>语句截止不需要分号</li>
+  <li>缩进没有绝对的标准（一般是一个tab）</li>
+  <li>多条语句在一行时用分号隔开（唯一需要分号的地方）</li>
+  <li>一条语句可以横跨多行，只需要用括号括起来（<code>(), [], {}</code>）</li>
+  <li>符合语句的主体可以在首行的冒号之后（<code>if x&gt;y: print(x)</code>），但只能是简单语句</li>
+</ul>
+
+<p>简单的语句片段：</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="lineno">1</span> <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+<span class="lineno">2</span>     <span class="n">reply</span><span class="o">=</span><span class="nb">raw_input</span><span class="p">(</span><span class="s">&#39;Enter text:&#39;</span><span class="p">)</span>
+<span class="lineno">3</span>     <span class="k">if</span> <span class="n">reply</span><span class="o">==</span><span class="s">&#39;stop&#39;</span><span class="p">:</span>
+<span class="lineno">4</span>         <span class="k">break</span>
+<span class="lineno">5</span>     <span class="k">elif</span> <span class="ow">not</span> <span class="n">reply</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+<span class="lineno">6</span>         <span class="k">print</span><span class="p">(</span><span class="s">&#39;Bad! &#39;</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>
+<span class="lineno">7</span>     <span class="k">else</span><span class="p">:</span>
+<span class="lineno">8</span>         <span class="k">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">reply</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="lineno">9</span> <span class="k">print</span><span class="p">(</span><span class="s">&#39;Bye!&#39;</span><span class="p">)</span></code></pre></div>
+
+<p>加入异常处理以后可以简化为：</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="lineno"> 1</span> <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+<span class="lineno"> 2</span>     <span class="n">reply</span><span class="o">=</span><span class="nb">raw_input</span><span class="p">(</span><span class="s">&#39;Enter text:&#39;</span><span class="p">)</span>
+<span class="lineno"> 3</span>     <span class="k">if</span> <span class="n">reply</span><span class="o">==</span><span class="s">&#39;stop&#39;</span><span class="p">:</span>
+<span class="lineno"> 4</span>         <span class="k">break</span>
+<span class="lineno"> 5</span>     <span class="k">try</span><span class="p">:</span>
+<span class="lineno"> 6</span>         <span class="n">num</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">reply</span><span class="p">)</span>
+<span class="lineno"> 7</span>     <span class="k">except</span><span class="p">:</span>
+<span class="lineno"> 8</span>         <span class="k">print</span><span class="p">(</span><span class="s">&#39;Bad! &#39;</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>
+<span class="lineno"> 9</span>     <span class="k">else</span><span class="p">:</span>
+<span class="lineno">10</span>         <span class="k">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">reply</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="lineno">11</span> <span class="k">print</span><span class="p">(</span><span class="s">&#39;Bye!&#39;</span><span class="p">)</span></code></pre></div>
+
+<h3 id="section-22">第11章 赋值、表达式和打印</h3>
+
+<div class="alert alert-block alert-warn form-inline" style="text-align:center; vertical-align:middle; font-size: 16px; font-weight:300;">To be continue!</div>
+
+    
+    </div>
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'windcorner'; // required: replace example with your forum shortname
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+</div>
+
+
+      <hr>
+      
+    </div> <!-- /container -->
+
+    <footer class="footer">
+      <p id="footer-first-child">Lovingly authored by windcorner in 2012 with help 
+          <br>from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>,<a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>, and countless humans.
+        </p>
+        <p>&copy; 2012 windcorner, Powered by Github</p>
+        <!--<p><a href="https://mixpanel.com/f/partner"><img src="https://mixpanel.com/site_media/images/partner/badge_light.png" alt="Real Time Web Analytics" /></a></p>-->
+    </footer>
+    
+    
+
+<div id="sidebar" class="sidebar">
+  <h4>学习Jekyll</h4>
+  <ul>
+    
+    
+
+
+  
+    
+      
+      <li class="active"><a href="/study/learn-python.html" class="active">Learning Python</a></li>
+      
+    
+  
+
+
+
+  </ul>
+
+</div>
+
+
+    <!-- <a id="forkme" style="display:none" href="http://github.com/mceiba/mceiba.github.com"><img style="position: absolute; top: 40px; right: 0; border: 0;" src="/assets/images/forkme.png" alt="Fork me on GitHub"></a> -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/assets/themes/twitter2/js/jquery.min.js"><\/script>')</script>
+    <script src="/assets/app.js?v=0.1"></script>
+    <script>
+      $(function(){
+        //forkme.init(); 
+        var delta = $(window).height() - $(document.body).height() -50;
+        if (delta>0) {
+          $(".footer").css("margin-top", delta);
+          // $(".footer").animate({
+          //   "margin-top": delta+"px"
+          // }, "fast");
+        }
+      
+		  var i=1;
+  		$("h2").each(function(){$(this).attr("id",(i++)+"_"+$(this).text());});
+  		//$("h2").attr("id", function(){ return "h2_"(i++)+"_"+this.title });
+          Toc.init('#sidebar', '#main');
+        
+  	  })
+    </script>
+    
+    <!---->
+  </body>
+</html>
+
+

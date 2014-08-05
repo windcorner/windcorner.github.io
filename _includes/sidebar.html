@@ -1,0 +1,44 @@
+{% if page.categories contains "footmark" %}
+
+<div id="sidebar" class="sidebar">
+  <h4>Footmark</h4>
+  <ul>
+    {% assign pages_list = site.categories.footmark %}  
+    {% include JB/pages_list %}
+  </ul>
+  
+</div>
+
+{% elsif page.categories contains "study" %}
+
+<div id="sidebar" class="sidebar">
+  <h4>学习Jekyll</h4>
+  <ul>
+    {% assign pages_list = site.categories.study %}
+    {% include custom/pages_list_reversed %}
+  </ul>
+
+</div>
+
+{% elsif page.categories contains "research" %}
+
+<div id="sidebar" class="sidebar">
+  <h4>学习笔记</h4>
+  <ul>
+    {% assign pages_list = site.categories.research %}
+    {% include custom/pages_list_reversed %}
+  </ul>
+
+</div>
+{% elsif page.categories contains "life" %}
+
+<div id="sidebar" class="sidebar">
+  <h4>学习笔记</h4>
+  <ul>
+    {% assign pages_list = site.categories.life %}
+    {% include custom/pages_list_reversed %}
+  </ul>
+
+</div>
+
+{% endif %}

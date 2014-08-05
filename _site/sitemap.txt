@@ -1,0 +1,15 @@
+
+http://windcorner.github.io/archive.html
+http://windcorner.github.io/categories.html
+http://windcorner.github.io/footmark/index.html
+http://windcorner.github.io/study/index.html
+http://windcorner.github.io/life/index.html
+http://windcorner.github.io/research/index.html
+http://windcorner.github.io/index.html
+http://windcorner.github.io/pages.html
+http://windcorner.github.io/post_all.html
+http://windcorner.github.io/sitemap.txt
+http://windcorner.github.io/tags.html
+
+http://windcorner.github.io/study/learn-python.html
+http://windcorner.github.io/research/jekyll-introduction.html
