@@ -7,6 +7,6 @@ title: "技术研究"
 
 <ul class="thumbnails">
   {% assign pages_icons = site.categories.research %}
-  {% include custom/pages_reversed %}
+  {% include custom/pages_description %}
 </ul>
 
