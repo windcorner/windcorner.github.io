@@ -13,8 +13,10 @@ description: |
        3#   ...
        4#   funcC  (at /opt/oracle/D.so
        5#   MODA::funB  (at /home/modA/XXXX)
+
+
   funC明明是modA下的一个动态库中的函数，怎么会调到oracle下的一个动态库函数呢？
-  通过nm发现原来两个库中都有funcC这个函数，由于加载的函数导致了这个问题。
+  通过nm发现原来两个库中都有funcC这个函数，由于加载的函数错误导致了这个问题。
    
 
   原来编译动态库时如果不加“-Bsymbolic”这个选项，在应用程序中（或加载在前的）的同名函数或全局变量会覆盖动态库中的函数或全局变量。

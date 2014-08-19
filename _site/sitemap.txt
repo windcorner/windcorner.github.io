@@ -11,5 +11,6 @@ http://windcorner.github.io/post_all.html
 http://windcorner.github.io/sitemap.txt
 http://windcorner.github.io/tags.html
 
+http://windcorner.github.io/study/same-function-name-in-shared-lib.html
 http://windcorner.github.io/study/learn-python.html
 http://windcorner.github.io/research/jekyll-introduction.html

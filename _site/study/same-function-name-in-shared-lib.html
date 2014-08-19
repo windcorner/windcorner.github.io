@@ -4,10 +4,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tags</title>
-    
+    <title>动态库中的同名函数问题</title>
+    <meta name="description" content="本文主要说明一个事例编译选项“-Bsymbolic”的作用，在编译无命名空间的动态库时推荐使用，比如常见的C语言动态库。
+">
     <meta name="author" content="windcorner">
-    <meta name="keywords" content="风之一角,windcorner,Tags">
+    <meta name="keywords" content="风之一角,windcorner,动态库中的同名函数问题,study,linuxC">
     <meta property="wb:webmaster" content="45f4c044418008e7" />
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
@@ -53,7 +54,7 @@
   
     
       
-      <li class="active"><a href="/tags.html" class="active">标签</a></li>
+      <li><a href="/tags.html">标签</a></li>
       
     
   
@@ -78,108 +79,51 @@
 
     <div id="main" class="container-fluid" style="position: relative; padding-left: 8%; padding-right: 8%;">
       
-<div class="row">
-  <div class="span8 offset2">
-    <div class="content page">
-      <h1 class="title">Posts By Tag</h1>
+<div class="row-fluid">
+  <div id="post-span" class="span10" style="margin-left: 10%;">
+    <div class="content post">     
+      <h1 class="title">动态库中的同名函数问题</h1>
+      本文主要说明一个事例编译选项“-Bsymbolic”的作用，在编译无命名空间的动态库时推荐使用，比如常见的C语言动态库。
+
       
-      <ul class="tag_box inline">
+<p>最近一个客户的商用机重启后，突然出现一个奇怪的业务异常问题。业务进程A一启动，就出现大量的错误，尝试core掉进程发现堆栈类似下面的情况：</p>
+
+<pre><code>   3#   ...
+   4#   funcC  (at /opt/oracle/D.so
+   5#   MODA::funB  (at /home/modA/XXXX)
+</code></pre>
+
+<p>funC明明是modA下的一个动态库中的函数，怎么会调到oracle下的一个动态库函数呢？
+  通过nm发现原来两个库中都有funcC这个函数，由于加载的函数导致了这个问题。</p>
+
+<p>原来编译动态库时如果不加“-Bsymbolic”这个选项，在应用程序中（或加载在前的）的同名函数或全局变量会覆盖动态库中的函数或全局变量。</p>
+
+<p>解决问题就很简单了，重新编译一下funcC所在的库，再重启一下进程即可。</p>
+
+
     
-  
-
-
-  
-     
-      <li><a href="/tags.html#jekyll-ref">jekyll <span>1</span></a></li>
-     
-      <li><a href="/tags.html#python-ref">python <span>1</span></a></li>
-     
-      <li><a href="/tags.html#linux-ref">linux <span>1</span></a></li>
-     
-      <li><a href="/tags.html#C-ref">C <span>1</span></a></li>
-    
-  
-
-
-
-</ul>
-
-
- 
-  <h2 id="jekyll-ref">jekyll</h2>
-  <ul>
-      
+    </div>
+    <hr>
     
 
 
-  
-    
-      
-      <li><a href="/research/jekyll-introduction.html">利用Jekyll搭建个人博客</a></li>
-      
-    
-  
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'windcorner'; // required: replace example with your forum shortname
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
 
-  </ul>
- 
-  <h2 id="python-ref">python</h2>
-  <ul>
-      
-    
 
-
-  
-    
-      
-      <li><a href="/study/learn-python.html">Learning Python</a></li>
-      
-    
-  
-
-
-
-  </ul>
- 
-  <h2 id="linux-ref">linux</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      <li><a href="/study/same-function-name-in-shared-lib.html">动态库中的同名函数问题</a></li>
-      
-    
-  
-
-
-
-  </ul>
- 
-  <h2 id="C-ref">C</h2>
-  <ul>
-      
-    
-
-
-  
-    
-      
-      <li><a href="/study/same-function-name-in-shared-lib.html">动态库中的同名函数问题</a></li>
-      
-    
-  
-
-
-
-  </ul>
-
-
-    </div>  
   </div>
 </div>
 
@@ -197,6 +141,35 @@
     </footer>
     
     
+
+<div id="sidebar" class="sidebar">
+  <h4>学习Jekyll</h4>
+  <ul>
+    
+    
+
+
+  
+    
+      
+      <li><a href="/study/learn-python.html">Learning Python</a></li>
+      
+    
+  
+    
+      
+      <li class="active"><a href="/study/same-function-name-in-shared-lib.html" class="active">动态库中的同名函数问题</a></li>
+      
+    
+  
+
+
+
+  </ul>
+
+</div>
+
+
     <!-- <a id="forkme" style="display:none" href="http://github.com/mceiba/mceiba.github.com"><img style="position: absolute; top: 40px; right: 0; border: 0;" src="/assets/images/forkme.png" alt="Fork me on GitHub"></a> -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="/assets/themes/twitter2/js/jquery.min.js"><\/script>')</script>
