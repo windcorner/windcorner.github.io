@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>linux启动过程</title>
+    <meta name="description" content="本文主要说明x86系统从加电到内核启动的系统启动过程。
+">
+    <meta name="author" content="windcorner">
+    <meta name="keywords" content="风之一角,windcorner,linux启动过程,research,linuxx86">
+    <meta property="wb:webmaster" content="45f4c044418008e7" />
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter2/css/custom.css?v=0.3" rel="stylesheet" type="text/css" media="all">
+    <link href="/assets/themes/twitter2/css/syntax.css?body=1" rel="stylesheet" type="text/css" media="all">
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+	<script src="/assets/function.js"></script>
+  </head>
+
+  <body>
+    <div id="navbar" class="navbar navbar-fixed-top" style="padding-left: 0; padding-right: 0;">
+      <div class="navbar-inner" style="background:#2c2c2c">
+        <div class="container-fluid" style="margin-left:8%; margin-right:5%; overflow:hidden; padding-left: 0; padding-right: 0;">
+          <a class="brand" href="/">风之一角</a>
+          <ul id="left-nav" class="nav" style="font-weight: 250;">
+            <li class="divider-vertical" id="left-divider"></li>
+            
+            
+
+
+  
+    
+      
+      <li><a href="/essay/index.html">随笔</a></li>
+      
+    
+  
+    
+      
+      <li><a href="/research/index.html">技术研究</a></li>
+      
+    
+  
+    
+      
+      <li><a href="/life/index.html">生活杂记</a></li>
+      
+    
+  
+    
+      
+      <li><a href="/tags.html">标签</a></li>
+      
+    
+  
+    
+      
+      <li><a href="/archive.html">归档</a></li>
+      
+    
+  
+
+
+
+          </ul>
+          
+          <ul class="nav pull-right nav-right">
+            <li class="divider-vertical" id="right-divider"></li>
+            <li><a><span id=localtime class="label" style="background:#FCF8E3; font-size: 11px; font-weight: normal;"></span><script type="text/javascript">tick();</script></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="main" class="container-fluid" style="position: relative; padding-left: 8%; padding-right: 8%;">
+      
+<div class="row-fluid">
+  <div id="post-span" class="span10" style="margin-left: 10%;">
+    <div class="content post">     
+      <h1 class="title">linux启动过程</h1>
+      本文主要说明x86系统从加电到内核启动的系统启动过程。
+
+      
+<h3 id="cpu">CPU加电</h3>
+<p>系统上电后，CPU初始化时会将寄存器CS置为0xFFFFFh,IP置为0x0000h,执行0xFFFF:0000h处的跳转指令执行BIOS程序。
+###BIOS
+BIOS,不同架构的系统BIOS程序加载的首地址稍有不同，但功能基本相似：</p>
+
+<ul>
+  <li>执行POST</li>
+  <li>在启动设备中搜寻boot loader</li>
+  <li>将boot loader stage1程序加载入内存并执行</li>
+</ul>
+
+<p>简单地说，就是BIOS执行INT 0x19，加载MBR内容至0x7c00,然后跳转执行。</p>
+
+<p>为啥是0x7c00位置呢？</p>
+
+<p>0x7c00=32KB-1024B，是32K的最后一个KB,这个magic number不是intel决定的，所以我们在X86相关的文档中无法找到这个magic number的说明，这个magic number属于 BIOS specifiction 。这个0x7c00 是 IBM PC 5150 BIOS developer team 决定的。 </p>
+
+<h3 id="mbr">MBR</h3>
+<p>一般情况下，系统从硬盘启动。硬盘中存放boot load stage1程序的扇区称为MBR(Master Boot Record)。</p>
+
+<p>一般来说，它为硬盘的首个扇区，该扇区的512字节主要用于存放如下内容：</p>
+
+<ul>
+  <li>boot loader stage1程序   446字节</li>
+  <li>硬盘分区表                 64字节</li>
+  <li>有效标记（魔术字）0x55AA     2字节</li>
+</ul>
+
+<p>分区表中一个分区占用16字节，即一个硬盘当前只支持4个主分区。若为扩展分区，实际保存的即为第一个分区后的一个地址（存放逻辑分区表）。</p>
+
+<h3 id="stage1">Stage1</h3>
+
+<p>stage1的功能较简单，主要是加载位于第二个扇区的start.S程序到0x7000，并拷贝到0x8000执行。常见的stage1程序就是grub了，如果用户在启动时可以看到GRUB Shell，那就是stage1的真正画面。</p>
+
+<h3 id="stage15">Stage1.5</h3>
+<p>在/boot/grub目录存放着Stage1_5中可以加载的文件系统映像文件:</p>
+
+<pre><code>#ll  /boot/grub/*1_5
+-rw-r--r-- 1 root root 7552 May 11 2010 /boot/grub/e2fs_stage1_5
+-rw-r--r-- 1 root root 7840 May 11 2010 /boot/grub/fat_stage1_5
+</code></pre>
+
+<p>e2fs _stage1 _5对应的即为ext2/etx3的文件系统。</p>
+
+<p>不过，通常stage1.5阶段的文件不会放在目录中，因为当stage1还没加载stage1.5时，原则上是不能识别ext2的，当然也无法找到stage1.5这个文件，所以，它的作用是加载磁盘的第三个扇区到第N个扇区到内存，N取几，取决与文件系统的代码的大小。但是文件系统千千万，我们不可能把所有文件系统的功能文件放在磁盘的扇区里面，那怎么办呢？在grub安装的时候，能够识别启动设备的文件系统，比如是ext3文件系统，所以只需要将ext3部分的 e2fs_stage1 _5 放入扇区。</p>
+
+<h3 id="stage2">Stage2</h3>
+<p>至此阶段，有了文件系统，就可以不用计算扇区，可以直接访问文件了。系统执行/boot/grub/stage2并寻找/boot/grub/menu.lst来选择系统内核并引导。
+此后，就完成了grub的引导过程，加载linux内核，并进行内核的启动。</p>
+
+    
+    </div>
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'windcorner'; // required: replace example with your forum shortname
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+</div>
+
+
+      <hr>
+      
+    </div> <!-- /container -->
+
+    <footer class="footer">
+      <p id="footer-first-child">Lovingly authored by windcorner in 2012 with help 
+          <br>from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>,<a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>, and countless humans.
+        </p>
+        <p>&copy; 2012 windcorner, Powered by Github</p>
+        <!--<p><a href="https://mixpanel.com/f/partner"><img src="https://mixpanel.com/site_media/images/partner/badge_light.png" alt="Real Time Web Analytics" /></a></p>-->
+    </footer>
+    
+    
+
+<div id="sidebar" class="sidebar">
+  <h4>技术研究</h4>
+  <ul>
+    
+    
+
+
+  
+    
+      
+      <li class="active"><a href="/research/linux-boot-process.html" class="active">linux启动过程</a></li>
+      
+    
+  
+
+
+
+  </ul>
+
+</div>
+
+
+    <!-- <a id="forkme" style="display:none" href="http://github.com/mceiba/mceiba.github.com"><img style="position: absolute; top: 40px; right: 0; border: 0;" src="/assets/images/forkme.png" alt="Fork me on GitHub"></a> -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/assets/themes/twitter2/js/jquery.min.js"><\/script>')</script>
+    <script src="/assets/app.js?v=0.1"></script>
+    <script>
+      $(function(){
+        //forkme.init(); 
+        var delta = $(window).height() - $(document.body).height() -50;
+        if (delta>0) {
+          $(".footer").css("margin-top", delta);
+          // $(".footer").animate({
+          //   "margin-top": delta+"px"
+          // }, "fast");
+        }
+      
+		  var i=1;
+  		$("h2").each(function(){$(this).attr("id",(i++)+"_"+$(this).text());});
+  		//$("h2").attr("id", function(){ return "h2_"(i++)+"_"+this.title });
+          Toc.init('#sidebar', '#main');
+        
+  	  })
+    </script>
+    
+    <!---->
+  </body>
+</html>
+
+

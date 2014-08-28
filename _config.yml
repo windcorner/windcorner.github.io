@@ -12,8 +12,8 @@ topbar:
   #  url : '/footmark/index.html'
   #  title : 'Footmark'
   - 
-    url : '/study/index.html'
-    title : '学习历程'
+    url : '/essay/index.html'
+    title : '随笔'
   -
     url : '/research/index.html'
     title : '技术研究'
